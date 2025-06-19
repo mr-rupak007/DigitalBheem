@@ -13,13 +13,13 @@ body {
 
 .home {
   background: url('background.png') center center / cover no-repeat;
-  min-height: 120vh; /* Enables scroll */
+  min-height: 120vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   position: relative;
-  overflow-y: auto; /* Enable vertical scroll */
+  overflow-y: auto;
 }
 
 .scrollable {
@@ -270,3 +270,4 @@ button[type="button"]:hover {
     margin-top: 15px;
   }
 }
+
