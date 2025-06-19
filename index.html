@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Patra Hotel Booking</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="home">
+  <div class="overlay scrollable" id="homeSection">
+    <div class="home-content">
+      <h1>Welcome to Patra Hotel</h1>
+      <button class="btn" onclick="showBookingForm()">Book Your Room</button>
+    </div>
+  </div>
+
+  <div class="form-container" id="bookingSection">
+    <button type="button" class="close-btn" onclick="closeForm()">✖</button>
+    <h2>Room Booking Form</h2>
+    <form id="bookingForm">
+      <fieldset>
+        <legend>Customer Info</legend>
+        <input type="text" id="name" placeholder="Customer Name" required />
+        <input type="date" id="checkin" required />
+        <input type="number" id="days" placeholder="Total Days" required min="1" />
+        <input type="number" id="persons" placeholder="Total Persons" required min="1" />
+        <input type="number" id="advance" placeholder="Advance Amount" required min="1000" step="500" value="1000"/>
+      </fieldset>
+
+      <fieldset>
+        <legend>Room Info</legend>
+        <select id="roomType">
+          <option value="Delux">Delux</option>
+          <option value="Suite">Suite</option>
+        </select>
+        <div class="toggle-group">
+  <div class="toggle-option">
+    <label class="toggle-switch">
+      <input type="checkbox" id="ac">
+      <span class="slider"></span>
+    </label>
+    <span class="toggle-label">AC</span>
+  </div>
+  <div class="toggle-option">
+    <label class="toggle-switch">
+      <input type="checkbox" id="locker">
+      <span class="slider"></span>
+    </label>
+    <span class="toggle-label">Locker</span>
+  </div>
+</div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Payment</legend>
+        <p>Total Cost: ₹<span id="totalCost">0</span></p>
+        <p>Balance: ₹<span id="balance">0</span></p>
+      </fieldset>
+
+      <button type="button" onclick="calculateCost()">Calculate</button>
+      <button type="button" id="bookBtn" onclick="bookNow()" style="display:none;">Book Now</button>
+    </form>
+
+    <div id="calcMessage" class="success-message">Booking Calculated Successfully!</div>
+    <div id="finalMessage" class="success-message">✅ Booking Completed Successfully! Thank you 🎉</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
